@@ -1,0 +1,206 @@
+CREATE SCHEMA IF NOT EXISTS `base de datos.sql` DEFAULT CHARACTER SET utf8 ;
+USE `base de datos.sql` ;
+
+-- -----------------------------------------------------
+-- Table `USUARIO`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `USUARIO` (
+  `idUSUARIO` INT NOT NULL AUTO_INCREMENT,
+  `NOM_USUARIO` VARCHAR(30) NOT NULL,
+  `CORREO_USUARIO` VARCHAR(70) NOT NULL,
+  `CONTRASENA` VARCHAR(50) NOT NULL,
+  `APELLIDO` VARCHAR(30) NOT NULL,
+  `FECHA_REGISTRO` DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idUSUARIO`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `ROL`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `ROL` (
+  `idROL` INT NOT NULL,
+  `NOM_ROL` VARCHAR(50) NOT NULL,
+  PRIMARY KEY (`idROL`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `CATEGORIA`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `CATEGORIA` (
+  `idCATEGORIA` INT NOT NULL AUTO_INCREMENT,
+  `NOM_CATEGORIA` VARCHAR(45) NOT NULL,
+  `DESC_CATEGORIA` TEXT(1000) NOT NULL,
+  PRIMARY KEY (`idCATEGORIA`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `EMPRESA`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `EMPRESA` (
+  `idUSUARIO` INT NOT NULL,
+  `idEMPRESA` INT NOT NULL AUTO_INCREMENT,
+  `CORREO_EMPRESA` VARCHAR(100) NOT NULL,
+  `LOGO` VARCHAR(360) NOT NULL,
+  `NOMBRE_EMPRESA` VARCHAR(60) NOT NULL,
+  `DESCRIPCION` TEXT(500) NOT NULL,
+  `DIRECCION` VARCHAR(150) NOT NULL,
+  `FECHA_REGISTRO` DATETIME(6) NOT NULL,
+  PRIMARY KEY (`idEMPRESA`),
+  INDEX `fr_empresa_usuario_idx` (`idUSUARIO` ASC) ,
+  CONSTRAINT `fr_empresa_usuario`
+    FOREIGN KEY (`idUSUARIO`)
+    REFERENCES `USUARIO` (`idUSUARIO`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+
+
+
+
+
+
+-- -----------------------------------------------------
+-- Table `PRODUCTO`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `PRODUCTO` (
+  `idPRODUCTO` INT NOT NULL AUTO_INCREMENT,
+  `idCATEGORIA` INT NOT NULL,
+  `idRESEÑA` INT NOT NULL,
+  `NOM_PRODUCTO` VARCHAR(45) NOT NULL,
+  `PRESIO` INT NOT NULL,
+  `DIA_PUBLICACION` DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `STOCK` INT NOT NULL,
+  `ESTADO` ENUM('DISPONIBLE', 'AGOTADO', 'INACTIVO') NOT NULL DEFAULT 'DISPONIBLE',
+  `IMAGEN_PRODUCTO` VARCHAR(450) NULL,
+  PRIMARY KEY (`idPRODUCTO`),
+  INDEX `FR_producto_categoria_idx` (`idCATEGORIA` ASC) ,
+  CONSTRAINT `fr_producto_categoria`
+    FOREIGN KEY (`idCATEGORIA`)
+    REFERENCES `CATEGORIA` (`idCATEGORIA`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `USUARIO_ROL`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `USUARIO_ROL` (
+  `idUSUARIO_ROL` INT NOT NULL,
+  `idUSUARIO` INT NOT NULL,
+  `idROL` INT NOT NULL,
+  PRIMARY KEY (`idUSUARIO_ROL`),
+  INDEX `fr_usrol-usuario_idx` (`idUSUARIO` ASC) ,
+  INDEX `fr_usrol_rol_idx` (`idROL` ASC) ,
+  CONSTRAINT `fr_usrol_usuario`
+    FOREIGN KEY (`idUSUARIO`)
+    REFERENCES `USUARIO` (`idUSUARIO`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fr_usrol_rol`
+    FOREIGN KEY (`idROL`)
+    REFERENCES `ROL` (`idROL`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `EMPRESA_PRODUCTOS`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `EMPRESA_PRODUCTOS` (
+  `idEMPRESA_PRODUCTOS` INT NOT NULL AUTO_INCREMENT, 
+  `idPRODUCTOS` INT NOT NULL,
+  `idEMPRESA` INT NOT NULL,
+  PRIMARY KEY (`idEMPRESA_PRODUCTOS`),
+  INDEX `fr_empro_empresa_idx` (`idEMPRESA` ASC) ,
+  INDEX `fr_empro_producto_idx` (`idPRODUCTOS` ASC) ,
+  CONSTRAINT `fr_empro_empresa`
+    FOREIGN KEY (`idEMPRESA`)
+    REFERENCES `EMPRESA` (`idEMPRESA`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fr_empro_producto`
+    FOREIGN KEY (`idPRODUCTOS`)
+    REFERENCES `PRODUCTO` (`idPRODUCTO`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `RESENA`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `RESENA` (
+  `idRESENA` INT NOT NULL AUTO_INCREMENT,
+  `idPRODUCTO` INT NOT NULL,
+  `COMENTARIO` TEXT(1000) NOT NULL,
+  ` CALIFICACION` VARCHAR(45) NOT NULL,
+  `CALIFICACION` INT NOT NULL,
+  ` FECHA_PUBLICACION` DATETIME(6) NOT NULL DEFAULT  CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idRESENA`),
+  INDEX `fr_resena_producto_idx` (`idPRODUCTO` ASC) ,
+  CONSTRAINT `fr_resena_producto`
+    FOREIGN KEY (`idPRODUCTO`)
+    REFERENCES `PRODUCTO` (`idPRODUCTO`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+
+
+
+
+
+
+-- -----------------------------------------------------
+-- Table `EVENTOS`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `EVENTOS` (
+  `idEVENTOS` INT NOT NULL AUTO_INCREMENT,
+  `TITULO` VARCHAR(60) NOT NULL,
+  `DESCRIPCION` TEXT(1000) NOT NULL,
+  `FECHA_EVENTO` DATE NOT NULL,
+  `FECHA_HORA` TIME NULL,
+  `LUGAR` VARCHAR(90) NULL,
+  `ESTADO` ENUM('ACTIVO', 'CANCELADO', 'FINALIZADO') NULL DEFAULT 'ACTIVO',
+  ` FECHA_CREACION` DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `idUSUARIO` INT NOT NULL,
+  `idEMPRESA` INT NOT NULL,
+  PRIMARY KEY (`idEVENTOS`),
+  INDEX `fr_eventos_usuario_idx` (`idUSUARIO` ASC) ,
+  INDEX `fr_eventos_empresa_idx` (`idEMPRESA` ASC) ,
+  CONSTRAINT `fr_eventos_usuario`
+    FOREIGN KEY (`idUSUARIO`)
+    REFERENCES `USUARIO` (`idUSUARIO`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fr_eventos_empresa`
+    FOREIGN KEY (`idEMPRESA`)
+    REFERENCES `EMPRESA` (`idEMPRESA`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `RESENA_USUARIO`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `RESENA_USUARIO` (
+  `idRESENA_USUARIO` INT NOT NULL AUTO_INCREMENT,
+  `idRESENA` INT NOT NULL,
+  `idUSUARIO` INT NOT NULL,
+  PRIMARY KEY (`idRESENA_USUARIO`),
+  INDEX `fr_reseusu_resena_idx` (`idRESENA` ASC) ,
+  INDEX `fr_reseusu_usuario_idx` (`idUSUARIO` ASC) ,
+  CONSTRAINT `fr_reseusu_resena`
+    FOREIGN KEY (`idRESENA`)
+    REFERENCES `RESENA` (`idRESENA`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fr_reseusu_usuario`
+    FOREIGN KEY (`idUSUARIO`)
+    REFERENCES `USUARIO` (`idUSUARIO`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE)
+ENGINE = InnoDB;
