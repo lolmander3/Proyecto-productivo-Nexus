@@ -81,9 +81,27 @@ ALTER TABLE USUARIO CHANGE TELEFONO TEL VARCHAR(15) NOT NULL;
 -- 08. Eliminar Columna. -------------------------------------------------------------- --
 --     ALTER TABLE __ DROP __ : --------------------------------------------------------- --
 ALTER TABLE ROL DROP DESCRIP;
+ALTER TABLE USUARIO DROP TEL;
 -- 09. Agregar Valor x Defecto Columna. ------------------------------------------------ --
 --     ALTER TABLE __ ALTER __ SET DEFAULT __ : ----------------------------------------- --
 ALTER TABLE ROL ALTER DESCRIP SET DEFAULT 'Sin descripción';
+ALTER TABLE USUARIO ALTER APELLIDO SET DEFAULT 'Sin apellido';
 -- 10. Eliminar Valor x Defecto Columna. ------------------------------------------------ --
 --     ALTER TABLE __ ALTER __ DROP DEFAULT : ------------------------------------------- --
 ALTER TABLE ROL ALTER DESCRIP DROP DEFAULT;
+ALTER TABLE USUARIO ALTER APELLIDO DROP DEFAULT;
+-- 11. Mostrar Creación Tabla. --------------------------------------------------------- --
+--     SHOW CREATE TABLE __ : ----------------------------------------------------------- --
+SHOW CREATE TABLE ROL;
+SHOW CREATE TABLE USUARIO;
+SHOW CREATE TABLE USUARIO_ROL;
+SHOW CREATE TABLE CATEGORIA;
+SHOW CREATE TABLE EMPRESA;
+SHOW CREATE TABLE PRODUCTO;
+SHOW CREATE TABLE PRODUCTO;
+SHOW CREATE TABLE RESENA;
+SHOW CREATE TABLE EMPRESA_PRODUCTOS;
+SHOW CREATE TABLE RESENA_USUARIO;
+SHOW CREATE TABLE EVENTOS;
+-- 12. Eliminar Restricción. ----------------------------------------------------------- --
+--     ALTER TABLE __ DROP CONSTRAINT __ : ------------------------------------------------ --
