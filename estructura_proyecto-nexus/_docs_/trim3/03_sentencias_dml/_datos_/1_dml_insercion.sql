@@ -172,11 +172,11 @@ INSERT INTO EVENTOS (TITULO, DESCRIPCION, FECHA_EVENTO, LUGAR, ESTADO, idUSUARIO
 ('Evento Especial', 'El usuario asistió a un evento especial', '2025-01-15', 'Online', 'ACTIVO', 8, 3),
 ('Descuento', 'Aproveche en descuentos en nuestra tienda', '2025-01-16', 'Online', 'ACTIVO', 9, 4);
 
-INSERT INTO TIP_REPORTE (NOM_TIP_REPORTE) VALUES 
+INSERT INTO TIP_REPORTE (NOM_REPORTE) VALUES 
 ('usuario toxico'),('usuario acosador'),('usuario spammer'),
 ('producto falso'),('producto peligroso'),('producto de baja calidad'),
 ('empresa fraudulenta'),('empresa con malas prácticas'),('empresa que incumple normas'),
-('comentario inapropiado'),('comentario ofensivo'),('comentario spam'),
+('comentario inapropiado'),('comentario ofensivo'),('comentario spam');
 -- -------------------------------------------------------
 -- REPORTES
 -- -------------------------------------------------------
