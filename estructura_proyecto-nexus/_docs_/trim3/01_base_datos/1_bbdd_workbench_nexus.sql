@@ -251,7 +251,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`TIP_REPORTE`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`TIP_REPORTE` (
-  `idTIP_REPORTE` INT NOT NULL,
+  `idTIP_REPORTE` INT NOT NULL AUTO_INCREMEN,
   `NOM_REPORTE` VARCHAR(45) NOT NULL,
   `DESCRICION` TEXT(500) NOT NULL,
   PRIMARY KEY (`idTIP_REPORTE`))
@@ -262,14 +262,12 @@ ENGINE = InnoDB;
 -- Table `mydb`.`REPORTES`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`REPORTES` (
-  `idREPORTES` INT NOT NULL,
+  `idREPORTES` INT NOT NULL AUTO_INCREMEN,
   `idTIP_REPORTE` INT NOT NULL,
   `idPRODUCTO` INT NOT NULL,
   `RAZON_REPORTE` TEXT(500) NOT NULL,
   `REGISTRO_REPORTE` DATETIME(6) NOT NULL,
   PRIMARY KEY (`idREPORTES`),
-  INDEX `fr_reporte_tip_reporte_idx` (`idTIP_REPORTE` ASC) VISIBLE,
-  INDEX `fr_reporte_producto_idx` (`idPRODUCTO` ASC) VISIBLE,
   CONSTRAINT `fr_reporte_tip_reporte`
     FOREIGN KEY (`idTIP_REPORTE`)
     REFERENCES `mydb`.`TIP_REPORTE` (`idTIP_REPORTE`)

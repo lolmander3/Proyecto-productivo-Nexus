@@ -171,7 +171,30 @@ INSERT INTO EVENTOS (TITULO, DESCRIPCION, FECHA_EVENTO, LUGAR, ESTADO, idUSUARIO
 ('Feriado', 'El usuario celebró un feriado', '2025-01-14', 'Online', 'ACTIVO', 7, 2),
 ('Evento Especial', 'El usuario asistió a un evento especial', '2025-01-15', 'Online', 'ACTIVO', 8, 3),
 ('Descuento', 'Aproveche en descuentos en nuestra tienda', '2025-01-16', 'Online', 'ACTIVO', 9, 4);
--- -----------------------------------------------------
+
+INSERT INTO TIP_REPORTE (NOM_TIP_REPORTE) VALUES 
+('usuario toxico'),('usuario acosador'),('usuario spammer'),
+('producto falso'),('producto peligroso'),('producto de baja calidad'),
+('empresa fraudulenta'),('empresa con malas prácticas'),('empresa que incumple normas'),
+('comentario inapropiado'),('comentario ofensivo'),('comentario spam'),
+-- -------------------------------------------------------
+-- REPORTES
+-- -------------------------------------------------------
+INSERT INTO REPORTES (idTIP_REPORTE, idPRODUCTO, RAZON_REPORTE, REGISTRO_REPORTE) VALUES 
+(1, 1, 'El usuario es tóxico y ha acosado a otros usuarios', '2025-01-17 10:00:00'),
+(2, 2, 'El usuario es un acosador y ha acosado a otros usuarios', '2025-01-18 11:00:00'),
+(3, 3, 'El usuario es un spammer y ha enviado mensajes no deseados', '2025-01-19 12:00:00'),
+(4, 4, 'El producto es falso y no cumple con las especificaciones', '2025-01-20 13:00:00'),
+(5, 5, 'El producto es peligroso y representa un riesgo para la salud', '2025-01-21 14:00:00'),
+(6, 6, 'El producto es de baja calidad y no cumple con las expectativas', '2025-01-22 15:00:00'),
+(7, 7, 'La empresa es fraudulenta y ha engañado a los clientes', '2025-01-23 16:00:00'),
+(8, 8, 'La empresa tiene malas prácticas y no cumple con las normas de la comunidad', '2025-01-24 17:00:00'),
+(9, 9, 'La empresa incumple normas y ha sido reportada por varios usuarios', '2025-01-25 18:00:00'),
+(10, 10, 'El comentario es inapropiado y viola las normas de la comunidad', '2025-01-26 19:00:00'),
+(11, 11, 'El comentario es ofensivo y ha sido reportado por varios usuarios', '2025-01-27 20:00:00'),
+(12, 12, 'El comentario es spam y no aporta valor a la conversación', '2025-01-28 21:00:00');
+
+-- -------------------------------------------------------
 -- Fin de las inserciones
--- -----------------------------------------------------
+-- ------------------------------------------------------
 SET FOREIGN_KEY_CHECKS=1;
