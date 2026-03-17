@@ -104,4 +104,4 @@ SHOW CREATE TABLE EMPRESA_PRODUCTOS;
 SHOW CREATE TABLE RESENA_USUARIO;
 SHOW CREATE TABLE EVENTOS;
 -- 12. Eliminar Restricción. ----------------------------------------------------------- --
---     ALTER TABLE __ DROP CONSTRAINT __ : ------------------------------------------------ --
+--     ALTER TABLE __ DROP CONSTRAINT __ : --------------------------------------------- --
