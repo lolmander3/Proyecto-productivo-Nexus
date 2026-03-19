@@ -72,32 +72,3 @@ nav{
 .col{
 
 }
-@media (max-width: 992px){
-    nav {
-        height: 150px;
-    }
-    .logo{
-        width: 100%;
-        height: 100px;
-    }
-    .navegacion{
-        width: 80%;
-        height: 50px;
-    }
-    .ingreso{
-        width: 20%;
-        height: 50px;
-    }
-}
-/*celular*/
-@media (max-width: 576px){
-    .logo{
-        height: 50%;
-    }
-    .navegacion{
-        width: 100%;
-    }
-    .ingreso{
-        width: 100%;
-    }
-}
