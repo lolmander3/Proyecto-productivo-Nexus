@@ -69,6 +69,19 @@ nav{
     display: flex;
     flex-flow: column nowrap;
 }
-.col{
+.col-cont{
+    flex: 1;
+    display: flex;
+    flex-flow: row wrap;
+}
+.fila-col-arr{
+    flex: 70%;
+}
+.fila-col-abj{
+    flex: 30%;
+}
 
+footer{
+    width: 100%;
+    height: 70px;
 }
