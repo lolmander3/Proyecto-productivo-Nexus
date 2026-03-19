@@ -23,7 +23,7 @@ insert into ROL (idROL, NOM_ROL) values
 (1,'Administrador'),
 (2,'moderador'),
 (3,'usuario'),
-(4,'empresario');
+(4,'emprendedor');
 -- -----------------------------------------------------
 -- Tabla USUARIO 
 -- -----------------------------------------------------
@@ -74,7 +74,7 @@ insert into EMPRESA (idUSUARIO, CORREO_EMPRESA, LOGO, NOMBRE_EMPRESA, DESCRIPCIO
 ------------------------------------------------------
 -- Tabla PRODUCTO
 -------------------------------------------------------
-INSERT INTO PRODUCTO (idCATEGORIA, idRESEÑA, NOM_PRODUCTO, PRESIO, DIA_PUBLICACION, STOCK) VALUES 
+INSERT INTO PRODUCTO (idCATEGORIA, idRESEÑA, NOM_PRODUCTO, PRECIO, DIA_PUBLICACION, STOCK) VALUES 
 (1, 1, 'Laptop', 1000000, '2025-01-01', 50),
 (2, 2, 'Sofá', 500000, '2025-01-02', 30),
 (3, 3, 'Vestido', 80000, '2025-01-03', 100),
@@ -196,5 +196,5 @@ INSERT INTO REPORTES (idTIP_REPORTE, idPRODUCTO, RAZON_REPORTE, REGISTRO_REPORTE
 
 -- -------------------------------------------------------
 -- Fin de las inserciones
--- ------------------------------------------------------
+-- -------------------------------------------------------
 SET FOREIGN_KEY_CHECKS=1;
