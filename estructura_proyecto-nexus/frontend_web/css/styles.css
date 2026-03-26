@@ -26,9 +26,10 @@ a{
     justify-content: space-between;
     background-color: #2ECC71;
 }
+/* cajas de nav*/
 .contenedor_nav div a, .contenedor_nav div section a{
     color: white;
-    font-size: 16px;
+    font-size: 13px;
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
@@ -59,13 +60,105 @@ a{
     display: flex;
     height: 64px;
     align-items: center;
-    padding-left: 20px;
+    padding-left: 10px;
     padding-right: 20px;
     font-weight: bold;
 }
 .logotipo a p{
-    font-size: 19px;
+    font-size: 13px;
     font-weight: 700
 }
+/* cajas de links*/
+.links{
+    display: flex;
+}
+.cont_direc{
+    display: flex;
+}
 
+/* Botón Hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    align-self: center;
+    gap: 6px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.activo span:nth-child(1) {
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.activo span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.activo span:nth-child(3) {
+    transform: rotate(-45deg) translate(10px, -10px);
+}
+
+/* Media Query para móvil */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    
+    .contenedor_nav {
+        flex-wrap: wrap;
+    }
+    
+    .links, .sesion_star {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: #2ECC71;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .links.activo, .sesion_star.activo {
+        max-height: 500px;
+    }
+    
+    .links {
+        order: 3;
+    }
+    
+    .sesion_star {
+        order: 4;
+        top: auto;
+    }
+    
+    .cont_direc {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .cont_direc a, .sesion_star a {
+        padding: 12px 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .logotipo {
+        order: 1;
+        width: 100%;
+    }
+    
+    .hamburger {
+        order: 2;
+    }
+}
 
