@@ -3,7 +3,69 @@
     padding: 0;
     box-sizing: border-box;
 }
+a{
+    color: inherit;
+    text-decoration: inherit;
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
 /* contededor especial para el proyecto */
 .border{
-    border: 1px solid rgb(36, 36, 36);
+    border: 0.5px solid gray;
 }
+/* contenedor nav*/
+.contenedor_nav{
+    display: flex;
+    flex-flow: row nowrap;
+    width:  100%;
+    height: 64px;
+    margin: auto;
+    padding-inline-end: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    background-color: #2ECC71;
+}
+.contenedor_nav div a, .contenedor_nav div section a{
+    color: white;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+.cont_direc a{
+    font-weight: 540;
+}
+.cajas_nav{
+    height: auto;
+    display: flex;
+    text-align: center;
+    align-self: center;
+}
+.logotipo{
+    display: flex;
+    flex-flow: row nowrap;
+    text-align: center;
+    flex-direction: row;
+    align-items: center;
+    height: 64px;
+    width: auto;
+}
+.logotipo img{
+    width:50px;
+    border-radius: 70px;
+}
+.logotipo a, .con_direc a{
+    display: flex;
+    height: 64px;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: bold;
+}
+.logotipo a p{
+    font-size: 19px;
+    font-weight: 700
+}
+
+
