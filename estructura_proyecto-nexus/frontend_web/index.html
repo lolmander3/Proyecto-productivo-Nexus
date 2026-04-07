@@ -3,62 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <link rel="icon" href="img/Nexus_Icono.svg" type="image/x-icon">
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Nexus</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link reel="stylesheet" href="https://cdn.jsdeliver.net/npm/bootstrap@5.3.0-alpha/dist/css/bootstrap-icons@1.7.2/foot/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdeliver.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/estructura_proyecto-nexus/frontend_web/css/style.css">
+    
 </head>
-<body>
-    <!-- Barra -->
-    <nav class="border contenedor_nav">
-        <div class=" border cajas_nav logotipo">
-            <img src="img/Nexus_logo_mod.svg" alt="logo" type="image/x-icon" >
-            <div>
-                <a href="" class="border"><p>N</p>exus</a>
+<body>  
+<!--Encabezado-->
+<header>
+    <nav class="navbar navbar-expand-lg bg-success border-bottom ">
+    <div class="container">
+        <a class="navbar-brand fw-bold fs-4  text-light" href="#">Nexus</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-dark">
+                <li class="nav-item"><a class="nav-link text-light" href="#">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="Nosotros.html">Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="#">Productos</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="#">Empresas</a></li>
+                <li class="nav-item"><a class="nav-link text-light" href="Eventos.html">Eventos</a></li>
+            </ul>
+
+            <form class="d-flex me-3" role="search">
+                <div class="input-group">
+                <span class="input-group-text bg-transparent border-0"><i class="bi bi-search"></i></span>
+                <input class="form-control border-0 bg-light " type="search" placeholder="Buscar">
+                </div>
+            </form>
+
+            <div class="d-flex align-items-center">
+                <a href="login.html" class="nav-link me-3 text-light">Iniciar sesión</a>
+                <a href="registro.html" class="btn btn-outline-dark text-light">Registrarse</a>
             </div>
         </div>
-        <div class="border cajas_nav links">
-            <section class="border cont_direc">
-                <a class="re_link" href="http://">Inicio</a>
-                <a class="re_link" href="http://">Comunidad</a>
-                <a class="re_link" href="http://">Productos</a>
-                <a class="re_link" href="http://">Empresas</a>
-                <a class="re_link" href="http://">Avisos</a>
-                <a class="re_link" href="http://">Eventos</a>
-            </section>
-        </div>
-        <div class="border cajas_nav sesion_star">
-            <a href="http://">Iniciar Sesión</a>
-            <a href="http://">Registrarse</a>
-        </div>
-        <button class="hamburger" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+    </div>
     </nav>
-    <div class="border contenedor_inicio">
+</header>
+    <!--hero -->
+    <section class=" hero-nexus text-white py-5 d-flex align-items-center justify-content-center flex-column text-center" style="background-color: #2ecc71;">
+    <div class="container py-md-5"> 
+            <h1 class="display-4 fw-bold mb-3">Nexus: conecta emprendimientos</h1>
+            <p class="fs-5 mb-4">Explora empresas, descubre productos y apoya el talento local.</p>
 
-        <!-- Pagina inicio de sesión -->
-        <div class="border contenedor_cajas">
-            <section class=" border carrucel_prici">
-                <div>
-                    <div>
-                    
-                    </div>
-                </div>
-            </section>
-            <section class="border carrucel_novedad">
-                <div>
-                    
-                </div>
-            </section>
-            <section class="border carrucel_produc_dest">
-            </section>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <button class="btn btn-outline-dark btn-lg px-4  text-light  flex-wrap">Explorar empresas</button>
+        <button class="btn btn-outline-dark btn-lg px-4 text-light flex-wrap">Ver productos</button>
         </div>
     </div>
-    <!-- Pagina inicio de sesión -->
-    <footer class="border footer_nexus">
+    </section>
 
-    </footer>
-    <script src="js/scripts.js"></script>
+<!--Seccion de iconos-->
+
+<section class="section-icons">
+    <div class="container">
+        <div class="row">
+            
+        <div class="col-6 col-md-3 px-2  box-icons">
+        <div class="card border-0 shadow-sm p-3 h-100 rounded-4" >
+        
+        <div class="bg-success bg-opacity-10 rounded-3 d-flex align-items-center justify-content-center mb-3">
+        <i class="bi-shop-window"></i>
+        </div>
+        
+        <h6 class="fw-bold mb-1" >Empresas Locales</h6>
+        <p class="text-muted mb-0">
+
+        Conecta con los mejores emprendimientos cerca de ti .
+        </p>
+    </div>
+        
+    </div>
+
+
+
+            <div class="col-6 col-md-3 px-2 box-icons2">
+    <div class="card border-0 shadow-sm p-3 h-100 rounded-4" >
+        
+        <div class="bg-success bg-opacity-10 rounded-3 d-flex align-items-center justify-content-center mb-3" >
+        <i class="bi-bag-check"></i>
+        </div>
+        
+        <h6 class="fw-bold mb-1" >Productos Unicos</h6>
+        <p class="text-muted mb-0">
+        Encuentra artículos exclusivos y apoya directamente al productor local.
+        </p>
+    </div>
+    </div>
+
+
+
+
+    <div class="col-6 col-md-3 px-2 box-icons3">
+    <div class="card border-0 shadow-sm p-3 h-100 rounded-4" >
+        
+        <div class="bg-success bg-opacity-10 rounded-3 d-flex align-items-center justify-content-center mb-3">
+        <i class="bi-calendar-event"></i>
+        </div>
+        
+        <h6 class="fw-bold mb-1">Eventos Proximos</h6>
+        <p class="text-muted mb-0">
+        Participa en ferias, talleres y encuentros locales.
+        </p>
+    </div>
+    </div>
+
+    <div class="col-6 col-md-3 px-2 box-icons4">
+    <div class="card border-0 shadow-sm p-3 h-100 rounded-4" >
+        
+        <div class="bg-success bg-opacity-10 rounded-3 d-flex align-items-center justify-content-center mb-3" >
+        <i class="bi-suit-heart-fill"></i>
+        </div>
+        
+        <h6 class="fw-bold mb-1">Apoyo Local</h6>
+        <p class="text-muted mb-0">
+        Impulsa el crecimiento de tu economia local .
+        </p>
+
+        </div>
+    </div>
+
+    <section class="Empresas py-5 bg-light">
+    <div class="container">
+        <div class="mb-4">
+            <h2 class="fw-bold">Empresas destacadas</h2> 
+            <p class="text-muted">Descubre los mejores emprendimientos de la comunidad Nexus</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-12 col-md-4 mt-3">
+                <div class=" card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                    <img src="img/mantenimiento foto.jpg" class="card-img-top" alt="mantenimiento" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title fw-bold mb-0">FixIt Pro</h5>
+                            <span class="text-warning small">★ 4.9</span>
+                        </div>
+                        <p class="text-success small mb-2">Mantenimiento</p>
+                        <p class="card-text text-muted small">Reparaciones rápidas y garantizadas para tu hogar u oficina.</p>
+                        <button class="btn btn-success w-100 mt-3 rounded-3">Leer más</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                    <img src="img/papeleria.jpg" class="card-img-top" alt="papeleria" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title fw-bold mb-0">Trazo & Papel</h5>
+                            <span class="text-warning small">★ 4.8</span>
+                        </div>
+                        <p class="text-success small mb-2">Papelería</p>
+                        <p class="card-text text-muted small">Todo en suministros de oficina y materiales creativos para tus proyectos.</p>
+                        <button class="btn btn-success w-100 mt-3 rounded-3">Leer más</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                    <img src="img/costura.jpg" class="card-img-top" alt="costura" style="height: 200px; object-fit: cover;">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title fw-bold mb-0">Hebra & Estilo</h5>
+                            <span class="text-warning small">★ 5.0</span>
+                        </div>
+                        <p class="text-success small mb-2">Costura</p>
+                        <p class="card-text text-muted small">Confección a medida y arreglos con acabados de alta calidad.</p>
+                        <button class="btn btn-success w-100 mt-3 rounded-3">Leer más</button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div> 
+</section>
+        </div>
+        </div>
+        </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="productos-recomendados py-5">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <span class="text-success small fw-bold"><i class="bi bi-graph-up-arrow"></i> Populares</span>
+                <h2 class="fw-bold">Productos recomendados</h2>
+            </div>
+            <a href="#" class="text-success text-decoration-none small">Ver todos &rarr;</a>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                    <div class="position-relative">
+                        <img src="img/bolso artesanal.jpg" class="card-img-top" alt="Artesanía" style="height: 200px; object-fit: cover;">
+                        <span class="badge bg-success position-absolute top-0 start-0 m-3 rounded-pill px-3">Artesanía</span>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="fw-bold mb-1">Bolso Wayúu Ancestral</h6>
+                        <p class="text-muted small mb-3">Crafts & Co</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="text-success fw-bold fs-5">$45.000</span>
+                            <button class="btn btn-outline-secondary border-0 btn-sm"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                    <div class="position-relative">
+                        <img src="img/cargador.jpg" class="card-img-top" alt="Tecnología" style="height: 200px; object-fit: cover;">
+                        <span class="badge bg-success position-absolute top-0 start-0 m-3 rounded-pill px-3">Tecnología</span>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="fw-bold mb-1">Cargador </h6>
+                        <p class="text-muted small mb-3">Electronics Plus</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="text-success fw-bold fs-5">$10.000</span>
+                            <button class="btn btn-outline-secondary border-0 btn-sm"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                    <div class="position-relative">
+                        <img src="img/mielpura.jpg" class="card-img-top" alt="Alimentos" style="height: 200px; object-fit: cover;">
+                        <span class="badge bg-success position-absolute top-0 start-0 m-3 rounded-pill px-3">Alimentos</span>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="fw-bold mb-1">Miel de Montaña Pura</h6>
+                        <p class="text-muted small mb-3">Mercado Verde</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="text-success fw-bold fs-5">$28.000</span>
+                            <button class="btn btn-outline-secondary border-0 btn-sm"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                    <div class="position-relative">
+                        <img src="img/oleos.jpg" class="card-img-top" alt="Diseño" style="height: 200px; object-fit: cover;">
+                        <span class="badge bg-success position-absolute top-0 start-0 m-3 rounded-pill px-3">Diseño</span>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="fw-bold mb-1">Set de Óleos Profesionales</h6>
+                        <p class="text-muted small mb-3">Studio Creative</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="text-success fw-bold fs-5">$85.000</span>
+                            <button class="btn btn-outline-secondary border-0 btn-sm"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="bg-success text-white text-center p-5 rounded-5 shadow-lg">
+            <i class="bi bi-stars fs-1"></i>
+        <h2 class="display-5 fw-bold mb-3">¿Listo para unirte a Nexus?</h2>
+            
+            <p class="fs-5 mb-4 opacity-90">
+                Forma parte de la comunidad que está impulsando el comercio local.
+            </p>
+
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="registro.html" class="btn btn-light btn-lg px-4 fw-bold text-success rounded-pill">
+                    Comenzar ahora <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    
 </body>
+</html>

@@ -1,0 +1,71 @@
+/* fuentes*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Definimos el color Nexus como una variable para usarla fácil */
+:root {
+    --verde-nexus: #2ecc71; /* Verde brillante del mockup */
+    --verde-oscuro: #27ae60; /* Para degradados o hover */
+}
+
+/* Cambiar el fondo del Navbar */
+.navbar {
+    background-color: var(--verde-nexus) !important;
+}
+
+/* Cambiar el fondo de la sección Hero */
+.hero-nexus {
+    background-color: var(--verde-nexus);
+    /* O si quieres el degradado suave que se ve en el mockup: */
+    background: linear-gradient(145deg, #20be62, #27ae60);
+}
+
+.box-icons .box-icons2 .box-icons3 .box-icons4 {
+    max-width: 220px;
+    font-size: 0.9rem;
+    font-size: 0.75rem; 
+    line-height: 1.2;
+    width: 45px;
+    height: 45px;
+
+}
+
+
+/*La caja del login*/
+.card-login {
+    width: 100%;
+    max-width: 400px;
+}
+
+
+.iniciarsesion{
+    background-color: var(--verde-nexus);
+    color: white !important;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+
+.empresa-cuerpo{
+
+    background-color: var(--verde-nexus);
+    color: white !important;
+    transition: all 0.3 ease;
+}
+
+/*----- REGISTRO---------     */
+
+.card-register{
+
+    width: 100%;
+    max-width: 450px;
+    margin: 20px auto;
+}
+
+
+
+
+
+
+
+
+
