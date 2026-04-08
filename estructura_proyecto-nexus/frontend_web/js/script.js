@@ -1,0 +1,1 @@
+document.querySelector("#fig-code-root > div > div.pt-16.transition-all.duration-300.md\\:pl-64 > div > div > div.grid.grid-cols-1.lg\\:grid-cols-2.gap-6.mb-8 > div:nth-child(2)")

@@ -6,7 +6,7 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="icon" type="image/x icon " href="/img/usuario.png"/>
-    <link rel="stylesheet" href="/estructura_proyecto-nexus/frontend_web/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
@@ -15,13 +15,13 @@
 
     <nav class="navbar navbar-expand-lg bg-success border-bottom ">
         <div class="container">
-            <a class="navbar-brand fw-bold fs-4  text-light" href="index.html">Nexus</a><p>| Panel de Administración</p>
+            <a class="navbar-brand fw-bold fs-4  text-light" href="index.html">Nexus</a><p class=" m-0" style="color: #ffffff;"></i>|Panel de Administración</p>
         </div>
         <style>
 
             .container p{
                 color: #fff;
-                font-size: 1.1rem;
+                font-size: 1.1+rem;
                 margin-left: 9px;
             }
             .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
@@ -32,16 +32,88 @@
 }
         </style>
     </nav>
-    <style>
-        .head{
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-        }
-    </style>
 </header>
-<div>
+<div class="d-flex">
+
+    <div class="col-lg-2 col-md-3 sidebar">
+        <nav class="nav flex-column px-2">
+            <a class="nav-link active" href="#"><i class="bi bi-speedometer2"></i> Dashboard</a>
+            <a class="nav-link" href="#"><i class="bi bi-people-fill"></i> Usuarios</a>
+            <a class="nav-link" href="#"><i class="bi bi-building"></i> Empresas</a>
+            <a class="nav-link" href="#"><i class="bi bi-box-seam"></i> Productos</a>
+            <a class="nav-link" href="#"><i class="bi bi-megaphone-fill"></i> Avisos</a>
+            <a class="nav-link" href="#"><i class="bi bi-file-post"></i> Publicaciones</a>
+            <a class="nav-link" href="#"><i class="bi bi-chat-dots"></i> Comentarios</a>
+            <a class="nav-link" href="#"><i class="bi bi-calendar-event"></i> Eventos</a>
+            <a class="nav-link" href="#"><i class="bi bi-bar-chart-steps"></i> Reportes</a>
+            <a class="nav-link" href="#"><i class="bi bi-gear-wide-connected"></i> Configuración</a>
+        </nav>
+        <div class="mt-4 d-none d-md-block text-center text-white-50 small" style="position: absolute; bottom: 20px; width: 90%;">
+            <i class="bi bi-shield-check"></i> v2.0 · Admin
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <h2 class="mb-4">Dashboard</h2>
+        <!-- Cards -->
+        <div class="row g-3">
+            <div class="col-md-2">
+                <div class="card card-dashboard shadow-sm p-3">
+                    <i class="bi bi-people-fill"></i>
+                    <small class="text-muted">Usuarios Registrados</small>
+                    <h4 class="fw-bold">2,847</h4>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card card-dashboard shadow-sm p-3">
+                    <i class="bi bi-building"></i>
+                    <small class="text-muted">Empresas</small>
+                    <h4 class="fw-bold">156</h4>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card card-dashboard shadow-sm p-3">
+                    <i class="bi bi-box-seam"></i>
+                    <small class="text-muted">Productos</small>
+                    <h4 class="fw-bold">892</h4>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card card-dashboard shadow-sm p-3">
+                    <i class="bi bi-megaphone-fill"></i>
+                    <small class="text-muted">Publicaciones</small>
+                    <h4 class="fw-bold">5,421</h4>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card card-dashboard shadow-sm p-3">
+                    <i class="bi bi-app-indicator"></i>
+                    <small class="text-muted">Avisos Activos</small>
+                    <h4 class="fw-bold">24</h4>
+                </div>
+            </div>
+        </div>
+        <!-- Gráficos -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8 grf " >
+          <div>
+            <img class="img-fluid " src="img/grafica1.PNG" alt="" srcset="">            
+            <img class="img-fluid" src="img/grafica2.PNG" alt="" srcset="">
+          </div>
+        </div>
+    </div>
+
+    <div>
+    </div>
+
+
+</div>
+
+<!-- Charts -->
+<div class="row mt- g-3">
 
 </div>
 
