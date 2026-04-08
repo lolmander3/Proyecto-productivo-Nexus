@@ -21,7 +21,6 @@ SET FOREIGN_KEY_CHECKS=0;
 -- -----------------------------------------------------
 insert into ROL (idROL, NOM_ROL) values 
 (1,'Administrador'),
-(2,'moderador'),
 (3,'usuario'),
 (4,'emprendedor');
 -- -----------------------------------------------------
@@ -31,8 +30,6 @@ insert into USUARIO (NOM_USUARIO, CORREO_USUARIO, CONTRASENA, APELLIDO)
 values 
 ('admin','admin@gmail.com','password','istrador'),
 ('admin2','admin2@gmail.com','password','istrador2'),
-('moderador','moderador@gmail.com','password','moderado'),
-('moderador2','moderador2@gmail.com','password','moderado2'),
 ('usuario','usuario@gmail.com','password','usador'),
 ('empresario','empresario@gmail.com','password','remires'),
 ('usuario2','usuario2@gmail.com','password','usador2'),
@@ -93,8 +90,6 @@ INSERT INTO PRODUCTO (idCATEGORIA, idRESEÑA, NOM_PRODUCTO, PRECIO, DIA_PUBLICAC
 INSERT INTO USUARIO_ROL (idUSUARIO_ROL, idUSUARIO, idROL) VALUES 
 (1, 1, 1), -- admin
 (2, 2, 1), -- admin2
-(3, 3, 2), -- moderador
-(4, 4, 2), -- moderador2
 (5, 5, 3), -- usuario
 (6, 6, 4), -- empresario
 (7, 7, 3), -- usuario2
