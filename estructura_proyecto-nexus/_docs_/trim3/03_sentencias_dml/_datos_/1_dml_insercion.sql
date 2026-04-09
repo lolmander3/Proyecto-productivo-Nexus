@@ -14,90 +14,90 @@
 /* ------------------------------------------------------------------------------------- */
 /* ************************************************************************************* */
 
-Use database_nexus;
-SET FOREIGN_KEY_CHECKS=0;
+Use Nexus;
+
 -- -----------------------------------------------------
 -- Tabla ROL
 -- -----------------------------------------------------
-insert into ROL (idROL, NOM_ROL) values 
-(1,'Administrador'),
-(3,'usuario'),
-(4,'emprendedor');
+SET FOREIGN_KEY_CHECKS=0;
+TRUNCATE TABLE ROL;
+INSERT INTO ROL (idROL, NOM_ROL) VALUES 
+(1, 'Administrador'),
+(2, 'Usuario'),
+(3, 'Emprendedor');
+
 -- -----------------------------------------------------
 -- Tabla USUARIO 
 -- -----------------------------------------------------
-insert into USUARIO (NOM_USUARIO, CORREO_USUARIO, CONTRASENA, APELLIDO) 
+insert into USUARIO (idUSUARIO,NOM_USUARIO, CORREO_USUARIO, CONTRASENA, APELLIDO) 
 values 
-('admin','admin@gmail.com','password','istrador'),
-('admin2','admin2@gmail.com','password','istrador2'),
-('usuario','usuario@gmail.com','password','usador'),
-('empresario','empresario@gmail.com','password','remires'),
-('usuario2','usuario2@gmail.com','password','usador2'),
-('usuario3','usuario3@gmail.com','password','usador3'),
-('usuario4','usuario4@gmail.com','password','usador4'),
-('empresario2','empresario2@gmail.com','password','remires'),
-('empresario3','empresario3@gmail.com','password','remires'),
-('empresario4','empresario4@gmail.com','password','remires');
+(1,'admin','admin@gmail.com',sha1('password'),'istrador'),
+(2,'admin2','admin2@gmail.com',sha1('password'),'istrador2'),
+(3,'usuario','usuario@gmail.com',sha1('password'),'usador'),
+(4,'empresario','empresario@gmail.com',sha1('password'),'remires'),
+(5,'usuario2','usuario2@gmail.com',sha1('password'),'usador2'),
+(6,'usuario3','usuario3@gmail.com',sha1('password'),'usador3'),
+(7,'usuario4','usuario4@gmail.com',sha1('password'),'usador4'),
+(8,'empresario2','empresario2@gmail.com',sha1('password'),'remires'),
+(9,'empresario3','empresario3@gmail.com',sha1('password'),'remires'),
+(10,'empresario4','empresario4@gmail.com',sha1('password'),'remires');
 -- -----------------------------------------------------
 -- Tabla CATEGORIA
 -- -----------------------------------------------------
-insert into CATEGORIA (NOM_CATEGORIA, DESC_CATEGORIA) values 
-('Tecnología','Productos relacionados con la tecnología, como computadoras, teléfonos inteligentes, etc.'),
-('Hogar','Productos para el hogar, como muebles, electrodomésticos, etc.'),
-('Moda','Ropa, calzado y accesorios de moda.'),
-('Deportes','Equipamiento deportivo y ropa relacionada con deportes.'),
-('Alimentos','Productos alimenticios y bebidas.'),
-('Salud y Belleza','Productos relacionados con la salud y la belleza, como cosméticos, cuidado personal, etc.'),
-('Automotriz','Productos relacionados con automóviles, como repuestos, accesorios, etc.'),
-('Juguetes','Juguetes para niños de todas las edades.'),
-('Libros','Libros de diversos géneros y categorías.'),
-('Música y Entretenimiento','Productos relacionados con la música, películas, videojuegos, etc.'),
-('Servicios','Servicios diversos, como servicios de limpieza, reparación, etc.'),
-('Otros','Categoría para productos que no encajan en las categorías anteriores.'),
-('reporte de usuario','reportes de usuarios que han sido bloqueados por incumplir las normas de la comunidad'),
-('reporte de producto','reportes de productos que han sido bloqueados por incumplir las normas de la comunidad'),
-('reporte de empresa','reportes de empresas que han sido bloqueados por incumplir las normas de la comunidad'),
-('reporte de RESENA','reportes de RESENAs que han sido bloqueados por incumplir las normas de la comunidad'),
-('reporte de comentario','reportes de comentarios que han sido bloqueados por incumplir las normas de la comunidad'),
-('reporte de respuesta','reportes de respuestas que han sido bloqueados por incumplir las normas de la comunidad');
+insert into CATEGORIA (idCATEGORIA, NOM_CATEGORIA, DESC_CATEGORIA) VALUES  
+(1,'Tecnología','Productos relacionados con la tecnología, como computadoras, teléfonos inteligentes, etc.'),
+(2,'Alimentos','Productos alimenticios y bebidas.'),
+(3,'Moda','Ropa, calzado y accesorios de moda.'),
+(4,'Deportes','Equipamiento deportivo y ropa relacionada con deportes.'),
+(5,'Salud y Belleza','Productos relacionados con la salud y la belleza, como cosméticos, cuidado personal, etc.'),
+(6,'Automotriz','Productos relacionados con automóviles, como repuestos, accesorios, etc.'),
+(7,'Libros','Libros de diversos géneros y categorías.');
 ------------------------------------------------------
 -- Tabla EMPRESA
 -------------------------------------------------------
-insert into EMPRESA (idUSUARIO, CORREO_EMPRESA, LOGO, NOMBRE_EMPRESA, DESCRIPCION, DIRECCION, FECHA_REGISTRO) values 
-(6,'empresario@gmail.com','logo.jpg','Empresa J.J.','Descripción de la empresa','calle falsa s d39 #87','2025-01-01'),
-(10,'empresario2@gmail.com','logo2.jpg','Empresa A.B.','Descripción de la empresa','calle verdadera h d40 #88','2025-01-02'),
-(11,'empresario3@gmail.com','logo3.jpg','Empresa C.D.','Descripción de la empresa','calle principal d d41 #89','2025-01-03'),
-(12,'empresario4@gmail.com','logo4.jpg','Empresa E.F.','Descripción de la empresa','calle secundaria r d42 #90','2025-01-04');
+insert into EMPRESA (idEMPRESA, idUSUARIO, CORREO_EMPRESA, LOGO, NOMBRE_EMPRESA, DESCRIPCION, DIRECCION, FECHA_REGISTRO) values 
+(1,4,'empresario@gmail.com','logo.jpg','Empresa J.J.','Descripción de la empresa','calle falsa s d39 #87','2025-01-01'),
+(2,8,'empresario2@gmail.com','logo2.jpg','Empresa A.B.','Descripción de la empresa','calle verdadera h d40 #88','2025-01-02'),
+(3,9,'empresario3@gmail.com','logo3.jpg','Empresa C.D.','Descripción de la empresa','calle principal d d41 #89','2025-01-03'),
+(4,10,'empresario4@gmail.com','logo4.jpg','Empresa E.F.','Descripción de la empresa','calle secundaria r d42 #90','2025-01-04');
 ------------------------------------------------------
 -- Tabla PRODUCTO
 -------------------------------------------------------
-INSERT INTO PRODUCTO (idCATEGORIA, idRESEÑA, NOM_PRODUCTO, PRECIO, DIA_PUBLICACION, STOCK) VALUES 
-(1, 1, 'Laptop', 1000000, '2025-01-01', 50),
-(2, 2, 'Sofá', 500000, '2025-01-02', 30),
-(3, 3, 'Vestido', 80000, '2025-01-03', 100),
-(4, 4, 'Balón de fútbol', 300, '2025-01-04', 200),
-(5, 5, 'Chocolate', 1000, '2025-01-05', 500),
-(6, 6, 'Crema facial', 25000, '2025-01-06', 75),
-(7, 7, 'Neumáticos', 200000, '2025-01-07', 25),
-(8, 8, 'Muñeca', 1500, '2025-01-08', 150),
-(9, 9, 'Libro de ficción', 200, '2025-01-09', 300),
-(10, 10, 'Videojuego', 6000, '2025-01-10', 80),
-(11, 11, 'Servicio de limpieza', 100000, '2025-01-11', 10),
-(12, 12, 'Producto diverso', 50000, '2025-01-12', 60);
+SET FOREIGN_KEY_CHECKS=0;
+TRUNCATE TABLE PRODUCTO;
+INSERT INTO PRODUCTO (idCATEGORIA, idPRODUCTO, NOM_PRODUCTO, PRECIO, DIA_PUBLICACION, STOCK, ESTADO_ITEM, IMAGEN_PRODUCTO, TIPO_ITEM) VALUES  
+(1, 1, 'Laptop', 700000, '2025-01-01', 50, 'DISPONIBLE','laptop_pro.jpg','Producto'),
+(2, 2, 'Sofá', 500000, '2025-01-02', 30,'AGOTADO','Sofa_cafe.png','Producto'),
+(3, 3, 'Vestido', 80000, '2025-01-03', 100,'DISPONIBLE','Vestido_tirantes_rojo.jpg','Producto'),
+(4, 4, 'Balón de fútbol', 300, '2025-01-04', 200,'AGOTADO','Balon_Verde_png','Producto'),
+(5, 5, 'Chocolate', 1000, '2025-01-05', 500,'DISPONIBLE','Chocolate_png','Producto'),
+(6, 6, 'Peluqueria', 25000, '2025-01-06', 75,'DISPONIBLE','Peluqueria_P.png','Servicio'),
+(7, 7, 'Servicio mecanico', 200000, '2025-01-07', 25,'INACTIVO','mecanica_M.jpg','Servicio'),
+(8, 8, 'Muñeca', 1500, '2025-01-08', 150,'DISPONIBLE','Muñeca_Barbie.png','Producto'),
+(9, 9, 'Libro de ficción', 200, '2025-01-09', 300,'DISPONIBLE','Libro_principito.png','Producto'),
+(10, 10, 'Videojuego', 6000, '2025-01-10', 80,'DISPONIBLE','videojuego_V.png','Producto'),
+(11, 11, 'Servicio de limpieza', 100000, '2025-01-11', 10,'DISPONIBLE','Servicio_empresa.png','Servicio'),
+(12, 12, 'Almendras', 1000, '2025-01-12', 60,'DISPONIBLE','Almendras_A.jpg','Producto');
+SET FOREIGN_KEY_CHECKS=1;
 -- -----------------------------------------------------
 -- Tabla USUARIO_ROL
 -- -----------------------------------------------------
-INSERT INTO USUARIO_ROL (idUSUARIO_ROL, idUSUARIO, idROL) VALUES 
-(1, 1, 1), -- admin
-(2, 2, 1), -- admin2
-(5, 5, 3), -- usuario
-(6, 6, 4), -- empresario
-(7, 7, 3), -- usuario2
-(8, 8, 3), -- usuario3
-(9, 9, 3), -- usuario4
-(10, 10, 4), -- empresario2
-(11, 11, 4), -- empresario3
-(12, 12, 4); -- empresario4
+-- Cambiamos los 4 por 3 para que apunten a 'Emprendedor'
+
+-- 1. Limpiamos la tabla para que no haya duplicados
+-- DELETE FROM USUARIO_ROL
+-- 2. Insertamos SOLO los usuarios que existen (idUSUARIO del 1 al 10)
+INSERT INTO USUARIO_ROL (idUSUARIO_ROL, idUSUARIO, idROL) VALUES  
+(1, 1, 1),   -- admin → Administrador
+(2, 2, 2),   -- admin2 → Usuario (si quieres)
+(3, 3, 2),   -- usuario → Usuario
+(4, 4, 3),   -- empresario → Emprendedor
+(5, 5, 2),   -- usuario2 → Usuario
+(6, 6, 2),   -- usuario3 → Usuario
+(7, 7, 2),   -- usuario4 → Usuario
+(8, 8, 3),   -- empresario2 → Emprendedor
+(9, 9, 3),   -- empresario3 → Emprendedor
+(10, 10, 3); -- empresario4 → Emprendedor
 ------------------------------------------------------
 -- Tabla RESENA
 -------------------------------------------------------
@@ -128,12 +128,13 @@ INSERT INTO RESENA (idPRODUCTO, COMENTARIO, CALIFICACION) VALUES
 (12, 'El producto diverso es útil pero un poco caro y no cumple todas mis expectativas', 2);
 -- Reseña usuario: Relaciona usuarios con sus reseñas
 INSERT INTO RESENA_USUARIO (idRESENA, idUSUARIO) VALUES 
-(1, 5), (2, 7), (3, 8), (4, 9), (5, 10), (6, 11), (7, 12), (8, 5), (9, 7), (10, 8), (11, 9), (12, 10),
-(13, 5), (14, 7), (15, 8), (16, 9), (17, 10), (18, 11), (19, 12), (20, 5), (21, 7), (22, 8), (23, 9), (24, 10);
+(1, 5), (2, 7), (3, 8), (4, 9), (5, 10), (6, 5), (7, 7), (8, 8), (9, 9), (10, 10), 
+(11, 5), (12, 7), (13, 8), (14, 9), (15, 10), (16, 5), (17, 7), (18, 8), (19, 9), (20, 10), 
+(21, 5), (22, 7), (23, 8), (24, 9);
 -- -----------------------------------------------------
 -- Tabla EMPRESA_PRODUCTO
 -- -----------------------------------------------------
-insert into EMPRESA_PRODUCTOS (idEMPRESA, idPRODUCTOS) values 
+insert into EMPRESA_PRODUCTOS (idEMPRESA, idPRODUCTO) values 
 (1, 1), -- Empresa J.J. - Laptop
 (1, 2), -- Empresa J.J. - Sofá
 (2, 3), -- Empresa A.B. - Vestido
@@ -155,41 +156,32 @@ INSERT INTO EVENTOS (TITULO, DESCRIPCION, FECHA_EVENTO, LUGAR, ESTADO, idUSUARIO
 ('Compra Vestido', 'El usuario compró el producto Vestido', '2025-01-03', 'Online', 'FINALIZADO', 8, 3),
 ('Compra Balón', 'El usuario compró el producto Balón de fútbol', '2025-01-04', 'Online', 'FINALIZADO', 9, 4),
 ('Compra Chocolate', 'El usuario compró el producto Chocolate', '2025-01-05', 'Online', 'FINALIZADO', 10, 1),
-('Compra Crema', 'El usuario compró el producto Crema facial', '2025-01-06', 'Online', 'FINALIZADO', 11, 2),
-('Compra Neumáticos', 'El usuario compró el producto Neumáticos', '2025-01-07', 'Online', 'FINALIZADO', 12, 3),
-('Compra Muñeca', 'El usuario compró el producto Muñeca', '2025-01-08', 'Online', 'FINALIZADO', 5, 4),
-('Compra Libro', 'El usuario compró el producto Libro de ficción', '2025-01-09', 'Online', 'FINALIZADO', 7, 1),
-('Compra Videojuego', 'El usuario compró el producto Videojuego', '2025-01-10', 'Online', 'FINALIZADO', 8, 2),
-('Compra Servicio', 'El usuario compró el servicio de limpieza', '2025-01-11', 'Online', 'FINALIZADO', 9, 3),
-('Compra Producto', 'El usuario compró el producto diverso', '2025-01-12', 'Online', 'FINALIZADO', 10, 4),
-('Sorteo', 'El usuario participó en un sorteo', '2025-01-13', 'Online', 'ACTIVO', 5, 1),
-('Feriado', 'El usuario celebró un feriado', '2025-01-14', 'Online', 'ACTIVO', 7, 2),
-('Evento Especial', 'El usuario asistió a un evento especial', '2025-01-15', 'Online', 'ACTIVO', 8, 3),
-('Descuento', 'Aproveche en descuentos en nuestra tienda', '2025-01-16', 'Online', 'ACTIVO', 9, 4);
+('Compra Crema', 'El usuario compró el producto Crema facial', '2025-01-06', 'Online', 'FINALIZADO', 5, 2),  -- Cambiado 11→5
+('Compra Neumáticos', 'El usuario compró el producto Neumáticos', '2025-01-07', 'Online', 'FINALIZADO', 7, 3),  -- Cambiado 12→7
+('Compra Muñeca', 'El usuario compró el producto Muñeca', '2025-01-08', 'Online', 'FINALIZADO', 8, 4),
+('Compra Libro', 'El usuario compró el producto Libro de ficción', '2025-01-09', 'Online', 'FINALIZADO', 9, 1),
+('Compra Videojuego', 'El usuario compró el producto Videojuego', '2025-01-10', 'Online', 'FINALIZADO', 10, 2),
+('Compra Servicio', 'El usuario compró el servicio de limpieza', '2025-01-11', 'Online', 'FINALIZADO', 5, 3),  -- Cambiado 9→5
+('Compra Producto', 'El usuario compró el producto diverso', '2025-01-12', 'Online', 'FINALIZADO', 7, 4),  -- Cambiado 10→7
+('Sorteo', 'El usuario participó en un sorteo', '2025-01-13', 'Online', 'ACTIVO', 8, 1),
+('Feriado', 'El usuario celebró un feriado', '2025-01-14', 'Online', 'ACTIVO', 9, 2),
+('Evento Especial', 'El usuario asistió a un evento especial', '2025-01-15', 'Online', 'ACTIVO', 10, 3),
+('Descuento', 'Aproveche en descuentos en nuestra tienda', '2025-01-16', 'Online', 'ACTIVO', 5, 4);  -- Cambiado 9→5
 
-INSERT INTO TIP_REPORTE (NOM_REPORTE) VALUES 
-('usuario toxico'),('usuario acosador'),('usuario spammer'),
-('producto falso'),('producto peligroso'),('producto de baja calidad'),
-('empresa fraudulenta'),('empresa con malas prácticas'),('empresa que incumple normas'),
-('comentario inapropiado'),('comentario ofensivo'),('comentario spam');
--- -------------------------------------------------------
--- REPORTES
--- -------------------------------------------------------
-INSERT INTO REPORTES (idTIP_REPORTE, idPRODUCTO, RAZON_REPORTE, REGISTRO_REPORTE) VALUES 
-(1, 1, 'El usuario es tóxico y ha acosado a otros usuarios', '2025-01-17 10:00:00'),
-(2, 2, 'El usuario es un acosador y ha acosado a otros usuarios', '2025-01-18 11:00:00'),
-(3, 3, 'El usuario es un spammer y ha enviado mensajes no deseados', '2025-01-19 12:00:00'),
-(4, 4, 'El producto es falso y no cumple con las especificaciones', '2025-01-20 13:00:00'),
-(5, 5, 'El producto es peligroso y representa un riesgo para la salud', '2025-01-21 14:00:00'),
-(6, 6, 'El producto es de baja calidad y no cumple con las expectativas', '2025-01-22 15:00:00'),
-(7, 7, 'La empresa es fraudulenta y ha engañado a los clientes', '2025-01-23 16:00:00'),
-(8, 8, 'La empresa tiene malas prácticas y no cumple con las normas de la comunidad', '2025-01-24 17:00:00'),
-(9, 9, 'La empresa incumple normas y ha sido reportada por varios usuarios', '2025-01-25 18:00:00'),
-(10, 10, 'El comentario es inapropiado y viola las normas de la comunidad', '2025-01-26 19:00:00'),
-(11, 11, 'El comentario es ofensivo y ha sido reportado por varios usuarios', '2025-01-27 20:00:00'),
-(12, 12, 'El comentario es spam y no aporta valor a la conversación', '2025-01-28 21:00:00');
+-- 1. LIMPIEZA (De hijos a padres)
+DELETE FROM REPORTES WHERE idREPORTES > 0;
+DELETE FROM TIP_REPORTE WHERE idTIP_REPORTE > 0;
 
+
+INSERT INTO TIP_REPORTE (idTIP_REPORTE, NOM_REPORTE, DESCRICION) VALUES  
+(1, 'usuario toxico', 'Comportamiento agresivo'), 
+(2, 'usuario acosador', 'Hostigamiento a otros'), 
+(3, 'usuario spammer', 'Publicidad no deseada');
+
+
+INSERT INTO REPORTES (idREPORTES, idTIP_REPORTE, idPRODUCTO, idUSUARIO, RAZON_REPORTE, REGISTRO_REPORTE) VALUES  
+(1, 1, 1, 5, 'El usuario es tóxico', '2025-01-17 10:00:00'), 
+(2, 2, 2, 7, 'Acoso constante', '2025-01-18 11:00:00');
 -- -------------------------------------------------------
 -- Fin de las inserciones
 -- -------------------------------------------------------
-SET FOREIGN_KEY_CHECKS=1;
