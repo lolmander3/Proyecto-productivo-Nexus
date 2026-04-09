@@ -1,0 +1,81 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nexus - Productos y Servicios</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body class="bg-light">
+
+        
+
+        <div class="container my-5">
+            <h2 class="fw-bold mb-1">Productos y Servicios</h2>
+            <p class="text-muted">Descubre negocios y servicios de tu comunidad</p>
+
+            <div class="card border-0 shadow-sm p-3 rounded-4 mb-5">
+                <p class="small fw-bold mb-2">Filtrar por categoría</p>
+                <div class="d-flex gap-2 flex-wrap">
+                    <button class="btn btn-success rounded-pill filter-btn" data-filter="all">Todos</button>
+                    <button class="btn btn-light rounded-pill filter-btn border" data-filter="tienda">
+                        <i class="bi bi-shop me-1"></i> Tiendas y Suministros
+                    </button>
+
+                    
+                    <button class="btn btn-light rounded-pill filter-btn border" data-filter="servicio">
+                        <i class="bi bi-tools me-1"></i> Servicios y Oficios
+                    </button>
+                </div>
+            </div>
+
+            <div class="row g-4" id="container-productos">
+                
+                <div class="col-12 col-md-6 col-lg-4 product-item" data-category="tienda">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="bg-blue-light py-5 text-center position-relative">
+                            <i class="bi bi-bag-fill fs-1 text-primary"></i>
+                            <span class="badge bg-white text-dark position-absolute top-0 end-0 m-3 shadow-sm small">Tiendas y Suministros</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="fw-bold mb-0">Minimarket Torre 1</h5>
+                                <span class="badge bg-success bg-opacity-10 text-success small">Minimarket</span>
+                            </div>
+                            <p class="text-muted small">Leche, pan, huevos, abarrotes y productos básicos.</p>
+                            <div class="text-warning small mb-3">★★★★☆ <span class="text-muted">4.8</span></div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button class="btn btn-light border btn-sm rounded-3"><i class="bi bi-person"></i> Contactar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 product-item" data-category="servicio">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="bg-orange-light py-5 text-center position-relative">
+                            <i class="bi bi-wrench-adjustable fs-1 text-warning"></i>
+                            <span class="badge bg-white text-dark position-absolute top-0 end-0 m-3 shadow-sm small">Servicios y Oficios</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h5 class="fw-bold mb-0">Plomería Urgente</h5>
+                                <span class="badge bg-success bg-opacity-10 text-success small">Reparaciones</span>
+                            </div>
+                            <p class="text-muted small">Reparación de fugas, cambio de tuberías y mantenimiento.</p>
+                            <div class="text-warning small mb-3">★★★★☆ <span class="text-muted">4.7</span></div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button class="btn btn-light border btn-sm rounded-3"> Contactar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script src="js/script.js"></script>
+    </body>
+    </html>
