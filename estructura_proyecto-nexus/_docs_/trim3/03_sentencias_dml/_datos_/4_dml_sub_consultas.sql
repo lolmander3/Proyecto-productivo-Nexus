@@ -33,3 +33,12 @@ WHERE PRECIO > ALL (
     JOIN CATEGORIA C ON P.idCATEGORIA = C.idCATEGORIA
     WHERE C.NOM_CATEGORIA = 'Moda'
 );
+
+-- Productos con mismo precio y stock que algún producto con stock > 100
+SELECT NOM_PRODUCTO, PRECIO, STOCK
+FROM PRODUCTO
+WHERE (PRECIO, STOCK) = ANY (
+    SELECT PRECIO, STOCK
+    FROM PRODUCTO
+    WHERE STOCK > 100
+);
