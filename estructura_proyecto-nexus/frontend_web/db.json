@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "nombre": "Administrador",
+      "email": "admin@nexus.com",
+      "password": "admin123",
+      "role": "admin"
+    }
+  ]
+}

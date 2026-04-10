@@ -325,6 +325,29 @@
 <div class="row mt- g-3">
 
 </div>
+<script>
+// Verificar si el usuario está autenticado
+const token = localStorage.getItem('auth_token');
+const userData = localStorage.getItem('user_data');
 
+if (!token || !userData) {
+    // No está autenticado, redirigir al login
+    window.location.href = 'login.html';
+}
+
+// Agregar botón de cerrar sesión
+const navBar = document.querySelector('.navbar .container');
+if (navBar) {
+    const logoutBtn = document.createElement('button');
+    logoutBtn.textContent = 'Cerrar Sesión';
+    logoutBtn.className = 'btn btn-danger btn-sm ms-3';
+    logoutBtn.style.cssText = 'background: #dc3545; border: none; padding: 5px 15px; border-radius: 8px; color: white;';
+    logoutBtn.onclick = () => {
+        localStorage.clear();
+        window.location.href = 'login.html';
+    };
+    navBar.appendChild(logoutBtn);
+}
+</script>
 </body>
 </html>
