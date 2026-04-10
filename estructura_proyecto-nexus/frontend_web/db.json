@@ -6,6 +6,13 @@
       "email": "admin@nexus.com",
       "password": "admin123",
       "role": "admin"
-    }
+    },
+    {
+      "id": 2,
+      "nombre": "Juan ",
+      "email": "juanperez@nexus.com",
+      "password": "juan1234",
+      "role": "usuario"
+    }  
   ]
 }

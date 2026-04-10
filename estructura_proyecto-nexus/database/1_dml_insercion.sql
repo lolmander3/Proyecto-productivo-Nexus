@@ -41,6 +41,8 @@ values
 (8,'empresario2','empresario2@gmail.com',sha1('password'),'remires'),
 (9,'empresario3','empresario3@gmail.com',sha1('password'),'remires'),
 (10,'empresario4','empresario4@gmail.com',sha1('password'),'remires');
+insert into USUARIO (idUSUARIO,NOM_USUARIO, CORREO_USUARIO, CONTRASENA, APELLIDO)
+value (1,"admin3","admin3@gmail.com", sha1("contra123"),"caldas")
 -- -----------------------------------------------------
 -- Tabla CATEGORIA
 -- -----------------------------------------------------
