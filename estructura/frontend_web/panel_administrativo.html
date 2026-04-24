@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="icon" type="image/x icon " href="/img/usuario.png"/>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+<style>
+    /* Sidebar personalizada estilo dashboard */
+    /*----- PANEL DE ADMINISTRACIÓN ---------     */
+.head{
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+/*   forma de iconos  */
+.card .bi::before{
+    font-size: 2.7rem;
+    width: auto;
+    background-color: turquoise;
+    border-radius: 10px;
+    border: 2px;
+}
+.sidebar {
+    background: linear-gradient(180deg, #f1f1f1 0%, #f8f8f8 100%);
+    min-height: 100vh;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.05);
+}
+.sidebar .nav-link {
+    color: #000000;
+    font-weight: 500;
+    padding: 12px 20px;
+    margin: 4px 0;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+}
+.sidebar .nav-link:hover {
+    background-color: #2ecc70;
+    color: white;
+    transform: translateX(4px);
+}
+.sidebar .nav-link i {
+    width: 28px;
+    font-size: 1.25rem;
+    }
+.sidebar .nav-link.active {
+    background-color: #2ECC71;
+    color: white;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+.brand {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    padding: 20px 0 10px 20px;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 20px;
+}
+.card-stats {
+    border: none;
+    border-radius: 24px;
+    background: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.02), 0 2px 4px rgba(0,0,0,0.03);
+}
+.card-stats:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 24px rgba(0,0,0,0.06);
+}
+.stat-value {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #1e2a3a;
+}
+.stat-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #5b6e8c;
+}
+.trend-up {
+    color: #2c9b5e;
+    background: #e0f2e9;
+    border-radius: 40px;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+.section-title {
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: #1e2f41;
+    border-left: 5px solid #2c7da0;
+    padding-left: 14px;
+    margin-bottom: 1.2rem;
+}
+.activity-card, .comparison-card {
+    background: white;
+    border-radius: 28px;
+    padding: 1.2rem 1rem;
+    box-shadow: 0 8px 20px rgba(148, 62, 62, 0.02), 0 1px 2px rgba(0,0,0,0.05);
+    height: 100%;
+}
+.week-day {
+    text-align: center;
+    font-weight: 600;
+    color: #334e68;
+    font-size: 0.85rem;
+}
+.bar-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.bar {
+    background: #2c7da0;
+    width: 32px;
+    border-radius: 20px;
+    transition: height 0.2s;
+    height: var(--h);
+}
+.bar-sm {
+    background: #ffffff;
+}
+.legend-badge {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 20px;
+    margin-right: 6px;
+}
+.recent-activity-item {
+    border-left: 3px solid #2c7da0;
+    background: #fafcff;
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    border-radius: 16px;
+    transition: 0.1s;
+}
+.footer-admin {
+    font-size: 0.75rem;
+    color: #6c7e97;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 1rem;
+    margin-top: 1.5rem;
+    text-align: center;
+    }
+@media (max-width: 780px) {
+    .sidebar {
+        min-height: auto;
+        margin-bottom: 20px;
+    }
+    .stat-value {
+        font-size: 1.7rem;
+    }
+    .brand {
+        padding: 12px 0 6px 16px;
+        font-size: 1.4rem;
+}
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    margin: 5px 0;
+    font-size: 14px;
+    color: gray;
+}
+
+.card .number {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.charts {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.chart-box {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    height: 250px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Solo decoración simple para simular gráficas */
+.fake-chart {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #4CAF50 30%, transparent 30%);
+    opacity: 0.3;
+}
+.grf{
+    display: flex;
+}
+
+</style>
+<header class="head">
+
+    <nav class="navbar navbar-expand-lg bg-success border-bottom ">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4  text-light" href="index.html">Nexus</a><p class=" m-0" style="color: #ffffff;"></i>|Panel de Administración</p>
+        </div>
+        <style>
+
+            .container p{
+                color: #fff;
+                font-size: 1.1+rem;
+                margin-left: 9px;
+            }
+            .navbar>.container, .navbar>.container-fluid, .navbar>.container-lg, .navbar>.container-md, .navbar>.container-sm, .navbar>.container-xl, .navbar>.container-xxl {
+            display: flex;
+            flex-wrap: inherit;
+            align-items: center;
+            justify-content: flex-start;
+}
+        </style>
+    </nav>
+</header>
+<div class="d-flex">
+
+    <div class="col-lg-2 col-md-3 sidebar">
+        <nav class="nav flex-column px-2">
+            <a class="nav-link active" href="#"><i class="bi bi-speedometer2"></i> Dashboard</a>
+            <a class="nav-link" href="#"><i class="bi bi-people-fill"></i> Usuarios</a>
+            <a class="nav-link" href="#"><i class="bi bi-building"></i> Empresas</a>
+            <a class="nav-link" href="#"><i class="bi bi-box-seam"></i> Productos</a>
+            <a class="nav-link" href="#"><i class="bi bi-megaphone-fill"></i> Avisos</a>
+            <a class="nav-link" href="#"><i class="bi bi-file-post"></i> Publicaciones</a>
+            <a class="nav-link" href="#"><i class="bi bi-chat-dots"></i> Comentarios</a>
+            <a class="nav-link" href="#"><i class="bi bi-calendar-event"></i> Eventos</a>
+            <a class="nav-link" href="#"><i class="bi bi-bar-chart-steps"></i> Reportes</a>
+            <a class="nav-link" href="#"><i class="bi bi-gear-wide-connected"></i> Configuración</a>
+        </nav>
+        <div class="mt-4 d-none d-md-block text-center text-white-50 small" style="position: absolute; bottom: 20px; width: 90%;">
+            <i class="bi bi-shield-check"></i> v2.0 · Admin
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <h2 class="mb-4">Dashboard</h2>
+        <!-- Cards -->
+        <div class="row g-3">
+            <div class="col-md-2">
+                <div class="card card-dashboard shadow-sm p-3">
+                    <i class="bi bi-people-fill"></i>
+                    <small class="text-muted">Usuarios Registrados</small>
+                    <h4 class="fw-bold">2,847</h4>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card card-dashboard shadow-sm p-3">
+                    <i class="bi bi-building"></i>
+                    <small class="text-muted">Empresas</small>
+                    <h4 class="fw-bold">156</h4>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="card card-dashboard shadow-sm p-3">
+                    <i class="bi bi-box-seam"></i>
+                    <small class="text-muted">Productos</small>
+                    <h4 class="fw-bold">892</h4>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card card-dashboard shadow-sm p-3">
+                    <i class="bi bi-megaphone-fill"></i>
+                    <small class="text-muted">Publicaciones</small>
+                    <h4 class="fw-bold">5,421</h4>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="card card-dashboard shadow-sm p-3">
+                    <i class="bi bi-app-indicator"></i>
+                    <small class="text-muted">Avisos Activos</small>
+                    <h4 class="fw-bold">24</h4>
+                </div>
+            </div>
+        </div>
+        <!-- Gráficos -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8 grf " >
+          <div>
+            <img class="img-fluid " src="img/grafica1.PNG" alt="" srcset="">            
+            <img class="img-fluid" src="img/grafica2.PNG" alt="" srcset="">
+          </div>
+        </div>
+    </div>
+    <div>
+    </div>
+</div>
+
+<!-- Charts -->
+<div class="row mt- g-3">
+
+</div>
+<script>
+// Verificar si el usuario está autenticado
+const token = localStorage.getItem('auth_token');
+const userData = localStorage.getItem('user_data');
+
+if (!token || !userData) {
+    // No está autenticado, redirigir al login
+    window.location.href = 'login.html';
+}
+
+// Agregar botón de cerrar sesión
+const navBar = document.querySelector('.navbar .container');
+if (navBar) {
+    const logoutBtn = document.createElement('button');
+    logoutBtn.textContent = 'Cerrar Sesión';
+    logoutBtn.className = 'btn btn-danger btn-sm ms-3';
+    logoutBtn.style.cssText = 'background: #dc3545; border: none; padding: 5px 15px; border-radius: 8px; color: white;';
+    logoutBtn.onclick = () => {
+        localStorage.clear();
+        window.location.href = 'login.html';
+    };
+    navBar.appendChild(logoutBtn);
+}
+</script>
+</body>
+</html>
